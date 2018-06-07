@@ -1,4 +1,82 @@
-mat-panel-title{
+.batchHeader{
+    padding: 3%;
+    margin:0;
+    text-align: center;
+    background-color: #4CAF50;
+    color:#f1f1f1;
+}
+
+.barcodeData{   
+    display:inline-block;
+    background:#f1f1f1;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    border-radius: 20px;
+    margin:2px;
+}
+
+.batchHeader:hover{
+    transition: 0.3s;
+    color:#4CAF50;
+    background-color: #f1f1f1;
+}
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+    max-height: 300px;
+    min-height: 200px;
+    overflow-y: scroll;
+}
+
+@media screen and (min-width:650px){
+    .dashBoard{
+        margin-left:15%;
+        max-width: 70%;
+    }
+}
+
+.dashBoard{
+    margin-top:60px;
+}
+.dashBoard>div{
+    margin-bottom: 10px;
+}
+
+/*Scrollbar design*/
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+
+/*mat-panel-title{
     font-family: "Merriweather", serif;
     font-weight: bolder ;
     font-size: 16px;
@@ -33,4 +111,4 @@ mat-panel-description{
 .displayHead{
     font-weight: bolder;
     font-size: 15px;
-}
+}*/

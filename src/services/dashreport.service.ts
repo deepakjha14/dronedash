@@ -14,7 +14,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DashreportService implements OnInit{  
-  polledDroneData: Observable<droneData>;
+  polledDroneData: Observable<Array<droneData>>;
   
   constructor(private httpClient: HttpClient) { }
 
@@ -23,12 +23,6 @@ export class DashreportService implements OnInit{
   }
   
   callDashboardService(){
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'my-auth-token'
-      })
-    };
     let droneAPI = this.httpClient.get(environment.apiData.dashBoardAPI);
     return droneAPI;
   }

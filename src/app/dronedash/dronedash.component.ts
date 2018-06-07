@@ -14,7 +14,8 @@ import { Observable } from 'rxjs';
 })
 export class DronedashComponent implements OnInit {
   displayBarcodeData;
-  polledDroneData: Observable<droneData>;
+
+  polledDroneData: Observable<Array<droneData>>;
 
   constructor(private dashService : DashreportService) { }
 
@@ -24,14 +25,25 @@ export class DronedashComponent implements OnInit {
     droneAPI = this.dashService.callDashboardService();
     this.polledDroneData = timer(0,5000).pipe(
       concatMap(_ => droneAPI),
-      map((response: droneData) => {
+      map((response: Array<droneData>) => {
         /*console.log(response,'reponse from the json data file');*/
         return response;}
       ),
     );
     this.polledDroneData.subscribe((res)=>{
-      this.displayBarcodeData=res;
+      this.displayBarcodeData=Array.from(this.prepDisplayData(res.reverse()));
       console.log(this.displayBarcodeData.length,'i am called')
     });
+  }
+  prepDisplayData(apiRes : any){
+    let displayMap = new Map();
+    apiRes.forEach(elem => {
+      if(displayMap.has(elem.ID)){
+        displayMap.get(elem.ID).push(elem.Data.barcodeData);
+      } else{
+        displayMap.set(elem.ID, [elem.Data.barcodeData]);
+      }
+    });
+    return displayMap;
   }
 }

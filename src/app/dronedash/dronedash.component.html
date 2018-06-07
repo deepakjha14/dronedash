@@ -1,4 +1,19 @@
-<div class="dashBoard">
+  <div class="dashBoard">
+    <div *ngFor="let barcodeDatum of displayBarcodeData" class="card">
+        <h4 class="batchHeader">
+          <span >Batch : <b>{{barcodeDatum[0].slice(-4)}}</b></span> &nbsp; &nbsp; <span >Records : ({{barcodeDatum[1].length}})</span> 
+        </h4> 
+      <div class="container">
+        
+        <div *ngFor="let scanRes of barcodeDatum[1]">
+            <p class="barcodeData">{{scanRes}}</p> 
+        </div>  
+    </div>
+  </div>
+ </div>
+
+
+<!-- <div class="dashBoard">
 <div *ngFor="let barcodeDatum of displayBarcodeData">
 <mat-accordion >
   <mat-expansion-panel (opened)="panelOpenState = true"
@@ -15,7 +30,7 @@
   </mat-expansion-panel>
 </mat-accordion>
 </div>
-</div>
+</div> -->
 <!--  <mat-expansion-panel>
     <mat-expansion-panel-header>
       <mat-panel-title>
