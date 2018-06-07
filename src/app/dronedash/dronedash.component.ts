@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./dronedash.component.css']
 })
 export class DronedashComponent implements OnInit {
-  private displayBarcodeData;
+  displayBarcodeData;
   polledDroneData: Observable<droneData>;
 
   constructor(private dashService : DashreportService) { }
