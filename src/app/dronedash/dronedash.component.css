@@ -1,0 +1,36 @@
+mat-panel-title{
+    font-family: "Merriweather", serif;
+    font-weight: bolder ;
+    font-size: 16px;
+    color:#2e2e2e;
+}
+
+.mat-expansion-panel-header{
+    background-color: rgb(241, 241, 241) !important;
+}
+
+.mat-expansion-panel-content{
+    text-align:center;
+}
+
+mat-panel-description{
+    color:#2c9bd2;
+}
+
+@media screen and (min-width:650px){
+    .dashBoard{
+        margin-left:33%;
+        max-width: 400px;
+    }
+}
+
+.dashBoard{
+    margin-top:60px;
+}
+.dashBoard>div{
+    margin-bottom: 10px;
+}
+.displayHead{
+    font-weight: bolder;
+    font-size: 15px;
+}

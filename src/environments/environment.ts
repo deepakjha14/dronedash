@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiData:{
+    dashBoardAPI : 'https://barcodeapi.mybluemix.net/listbarcode',
+    jsonFile:'../assets/dashResponse.json'
+  }
 };
 
 /*
