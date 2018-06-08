@@ -19,11 +19,16 @@ export class DronedashComponent implements OnInit {
 
   constructor(private dashService : DashreportService) { }
 
+  clearData(){
+    console.log('Test Me');
+    this.dashService.cleanRecords();
+  }
+
   ngOnInit() {
     let droneAPI;
     console.log(' I am polling');
     droneAPI = this.dashService.callDashboardService();
-    this.polledDroneData = timer(0,5000).pipe(
+    this.polledDroneData = timer(0,500000).pipe(
       concatMap(_ => droneAPI),
       map((response: Array<droneData>) => {
         /*console.log(response,'reponse from the json data file');*/

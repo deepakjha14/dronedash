@@ -1,4 +1,6 @@
-  <div class="dashBoard">
+<button class="clearbtn" (click)="clearData()">Clear Barcode</button>
+
+<div class="dashBoard">
     <div *ngFor="let barcodeDatum of displayBarcodeData" class="card">
         <h4 class="batchHeader">
           <span >Batch : <b>{{barcodeDatum[0].slice(-4)}}</b></span> &nbsp; &nbsp; <span >Records : ({{barcodeDatum[1].length}})</span> 

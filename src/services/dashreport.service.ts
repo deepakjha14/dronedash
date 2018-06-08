@@ -9,7 +9,6 @@ import { timer } from 'rxjs';
 import { concatMap, map, tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -25,5 +24,9 @@ export class DashreportService implements OnInit{
   callDashboardService(){
     let droneAPI = this.httpClient.get(environment.apiData.dashBoardAPI);
     return droneAPI;
+  }
+
+  cleanRecords(){
+    this.httpClient.post(environment.apiData.clearRecords, {});
   }
 }
